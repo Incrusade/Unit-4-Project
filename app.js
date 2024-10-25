@@ -19,7 +19,7 @@ app.put("/item/:id", (req,res)  => {
     const id = parseInt(req.params.id);
     const index = items.findIndex(i => i.id === id);
     if (index !== -1) {
-        items[index] = {id, ...req.nody};
+        items[index] = {id, ...req.body};
         res.json(items[index]);
     } else {
         res.status(404).send("item not Found");
